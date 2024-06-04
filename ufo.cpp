@@ -19,6 +19,21 @@ void welcom_message()
   std::cout << "guessing the letters in the codeword.\n";
 }
 
+//checks if letter is in codeword
+bool in_codeword(char letter, std::string codeword, std::string answer)
+{
+  bool geuss;
+  for (int k = 0; k < codeword.size(); k++)
+    {
+      if (letter == codeword[k])
+      {
+        answer[k] = letter;
+        return true;
+      }
+    }
+  return false;
+}
+
 //displays game over message
 void game_over(std::string guess, std::string codeword)
 {
